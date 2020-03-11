@@ -50,16 +50,23 @@ args['output'] = 'output'# input('Dest/file:')
 
 print('Source     : ', args['images'])
 print('Destination: ', args['output'])
+count = int(input('Enter no. of rows: '))
 
 images = loadImages(args['images']+'/raw')
 #print(images)
 
-print('Row 1:')
-stitchImages(images[:3], args['images']+'/row/1.jpg')
-print('Row 2:')
-stitchImages(images[3:6], args['images']+'/row/2.jpg')
-print('Row 3:')
-stitchImages(images[6:], args['images']+'/row/3.jpg')
+if(count == 3):
+        print('Row 1:')
+        stitchImages(images[:3], args['images']+'/row/1.jpg')
+        print('Row 2:')
+        stitchImages(images[3:6], args['images']+'/row/2.jpg')
+        print('Row 3:')
+        stitchImages(images[6:], args['images']+'/row/3.jpg')
+elif(count == 2):
+        print('Row 1:')
+        stitchImages(images[:2], args['images']+'/row/1.jpg')
+        print('Row 2:')
+        stitchImages(images[2:], args['images']+'/row/2.jpg')
 
 images = loadImages(args['images']+'/row')
 #print(images)
