@@ -30,10 +30,13 @@ def stitchImages(images, dest):
 
         if status == 0:
                 print("[INFO] stitching complete...")
+
+                #'''
                 cv2.imwrite(dest, stitched)
                 
                 cv2.imshow("Stitched", stitched)
                 cv2.waitKey(0)
+                #'''
 
                 rotateImage90R(dest)
                 return True
@@ -50,7 +53,7 @@ args['output'] = 'output'# input('Dest/file:')
 
 print('Source     : ', args['images'])
 print('Destination: ', args['output'])
-count = int(input('Enter no. of rows: '))
+count = 2#int(input('Enter no. of rows: '))
 
 images = loadImages(args['images']+'/raw')
 #print(images)
@@ -73,5 +76,12 @@ images = loadImages(args['images']+'/row')
 
 print('Final Image:')
 stitchImages(images, args['output']+'/output.png')
+
 rotateImage90R(args['output']+'/output.png')
 rotateImage90R(args['output']+'/output.png')
+
+image = cv2.imread('output/output.png')
+cv2.imshow('image',image)
+
+
+
