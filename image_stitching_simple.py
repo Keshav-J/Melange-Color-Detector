@@ -31,9 +31,9 @@ def stitchImages(images, dest):
         if status == 0:
                 print("[INFO] stitching complete...")
 
-                #'''
                 cv2.imwrite(dest, stitched)
                 
+                '''
                 cv2.imshow("Stitched", stitched)
                 cv2.waitKey(0)
                 #'''
@@ -82,6 +82,3 @@ rotateImage90R(args['output']+'/output.png')
 
 image = cv2.imread('output/output.png')
 cv2.imshow('image',image)
-
-
-
